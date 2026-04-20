@@ -12,7 +12,7 @@ jobs:
           run: nproc 
   
   test:
-    neeeds: [build]  
+    needs: [build]  
     runs-on: ubuntu-latest 
     steps:  
       - name: hello 
