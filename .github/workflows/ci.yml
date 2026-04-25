@@ -1,6 +1,10 @@
 name: My first pipeline
 
-on: push
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs: 
   build: 
@@ -8,7 +12,7 @@ jobs:
     steps:
         - name: Checkout code 
           uses: actions/checkout@v4
-        - name: Build image
+        - name: Build image-
           run: |
            docker build -t ${{secrets.DOCKER_USERNAME}}/ciportofolio:${{github.run_number}} .
            docker build -t ${{secrets.DOCKER_USERNAME}}/ciportofolio .
