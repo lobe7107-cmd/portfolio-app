@@ -27,7 +27,7 @@ jobs:
            docker push  ${{secrets.DOCKER_USERNAME}}/ciportofolio:${{ github.run_number }}  
            docker push  ${{secrets.DOCKER_USERNAME}}/ciportofolio 
 
-   deploy:
+  deploy:
      needs: build
      runs-on: ubuntu-latest
      steps:
